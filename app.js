@@ -6,7 +6,9 @@ class Productos{
         this.precio = precio;
         this.img = img;
     }
-    sumarIva *=1.21
+    sumarIva() {
+        this.precio *= 1.21
+    } 
 }
 
 // Array de productos para hacer el push de los productos
@@ -31,10 +33,10 @@ for (const producto of productos) {
     let div = document.createElement("div");
     div.className = "card"
     div.innerHTML = ` 
-        <img class="img-card" img="${producto.img}" alt="">
-    <p class="id-card">Cod: ${producto.Cod}</p>
+        <img class="img-card" src="${producto.img}" alt="">
+    <p class="id-card">Cod: ${producto.id}</p>
     <p class="title-card">${producto.title}</p>
     <p class="precio-card">$${producto.precio}</p>
     `;
-    contariner.append(div)
+    container.append(div)
 }
